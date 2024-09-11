@@ -2,6 +2,9 @@ import React from 'react'
 import '../styles/registro.css'
 
 function Form_Registro() {
+  const Register = =>{
+    
+  }
   return (
     <div className='contenedor-registro'>
       <h1 className='Titulo'>Registro</h1>
