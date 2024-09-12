@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/registro.css'
-imp
+import { useNavigate } from 'react-router-dom'
 
 function Form_Registro() {
 
   const [Nombre, setNombre] = useState('')
   const [Contra, setContra] = useState('')
   const [Correo, setCorreo] = useState('')
-  
+  const navegar = useNavigate(
+
+    
+  )
   return (
     <div className='contenedor-registro'>
       <h1 className='Titulo'>Registro</h1>
