@@ -3,7 +3,7 @@
     justify-content: center;
     color: rgb(220, 11, 11);
 }
-.contenedor-inicio{
+.Contenedor-principal{
     border: 5px solid white;
     display: flex;
     flex-direction: column;
