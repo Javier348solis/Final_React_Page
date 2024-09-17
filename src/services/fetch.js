@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3001/"
+const apiUrl = "http://localhost:3002/"
 const getData = async (endpoint) => {
     try {
    
@@ -9,10 +9,10 @@ const getData = async (endpoint) => {
       console.error('Error al cargar los usuarios:', error);
     } 
   };
-  export default getData
+  export {getData}
 
-  //Post
-  const guardarUser = async (obj,endpoint) => {
+  //POST
+  const guardarUsuario = async (obj,endpoint) => {
     try {
         const response = await fetch(apiUrl+endpoint, {
             method: 'POST',
@@ -27,4 +27,4 @@ const getData = async (endpoint) => {
     } catch (error) {
     }
 }
-export {guardarUser}
+export {guardarUsuario}
