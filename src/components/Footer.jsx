@@ -1,31 +1,35 @@
 import React from 'react'
+import '../styles/Footer.css'
 
 function Footer() {
   return (
     <div>
       <footer>
-             <p>
-                ©Todos los derechos reservados
-             </p>
-         <section>
-
-             <p>
-             Telefono:6040-9873
-             </p>
-         </section>
-
-         <div className='contacto-opcion'>
-             <a href="">Contacto</a>
-         </div>
-        
-         <div>
-              <a href="">Direccion</a>
-         </div>
-
-
-      </footer>
+      <span className="titulo-footer">Pagina</span>
+      <ul className="Redes">
+        <li><a href="#"><i className="im-facebook"></i></a></li>
+        <li><a href="#"><i className="im-WhatsApp"></i></a></li>
+        <li><a href="#"><i className="im-Telegram"></i></a></li>
+      </ul>
+      <div className="info">
+        <ul>
+          <li className="footer-lista">Ofertas</li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+        <ul>
+          <li className="footer-lista">Informacion</li>
+          <li><a href="#">Acerca de nosotros</a></li>
+          <li><a href="#">Ubicacion</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
     </div>
   )
 }
 
 export default Footer
+

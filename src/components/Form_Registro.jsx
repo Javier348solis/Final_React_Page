@@ -1,6 +1,6 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import '../styles/registro.css'
-import { getData, guardarUsuario } from '../services/fetch'
+import { obtenerUsuario, guardarUsuario } from '../services/fetch'
 
 function Form_Registro() {
   const [userName, setUserName] = useState('');

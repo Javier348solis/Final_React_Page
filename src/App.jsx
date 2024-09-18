@@ -1,6 +1,6 @@
 import './App.css'
 import Form_Registro from './components/Form_Registro'
-
+import Footer from './components/Footer'
 
 function App() {
  
@@ -8,10 +8,11 @@ function App() {
     <>
     <div>
    
-     <Form_Registro/>
+   <Footer/>
+    
     </div>
      
-    </>
+    </> 
   )
 }
 
