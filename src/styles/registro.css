@@ -1,32 +1,4 @@
-.Titulo{
-    display: flex;
-    justify-content: center;
-    color: rgb(220, 11, 11);
-}
-.contenedor-registro{
-    border: 5px solid white;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: black;
-}
-input{
-    width: 350px;
-    height: 25px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: 2px solid white;
-    
-}
-input::placeholder{
-    color: white;
-}
-.botoncito{
-    border-radius: 10px;
-    color: aqua;
-    box-shadow: 2px 3px 3px aqua;
-}
 body{
-    background-color: rgb(111, 109, 109);
+
 }
+.

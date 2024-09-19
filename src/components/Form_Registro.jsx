@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import '../styles/registro.css'
 import { obtenerUsuario, guardarUsuario } from '../services/fetch'
 
+
 function Form_Registro() {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,7 +11,7 @@ function Form_Registro() {
 
   useEffect(() => {
     const getUsers = async () => {
-        const dataUsuarios = await getData("users");
+        const dataUsuarios = await obtenerUsuario("users");
         setDatos(dataUsuarios);
     };
     getUsers();

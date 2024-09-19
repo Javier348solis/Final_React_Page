@@ -20,13 +20,14 @@ function Navbar() {
           <div className="dropdown-menu">
             <button>Articulos celular</button>
             <button>Articulos computadora</button>
+            <button>Relojes inteligentes</button>
             <button>Otros</button>
           </div>
         </div>
       </div>
     </nav>
   );
-};
+
     </div>
   )
 }
