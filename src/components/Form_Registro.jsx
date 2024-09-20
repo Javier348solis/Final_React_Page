@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../styles/registro.css'
 import { obtenerUsuario, guardarUsuario } from '../services/fetch'
 
@@ -8,6 +9,7 @@ function Form_Registro() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [datos, setDatos] = useState([]);
+  const navegarWeb = useNavigate()
 
   useEffect(() => {
     const getUsers = async () => {
@@ -33,7 +35,7 @@ function Form_Registro() {
           password: password
         };
         await guardarUsuario(usuario, "users");
-        // navegarWeb("/InicioSesi");
+        navegarWeb("/Inicio");
       }
     }
   };

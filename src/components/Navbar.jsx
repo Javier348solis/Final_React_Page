@@ -1,17 +1,17 @@
-import React from 'react'
-import '../styles/Navbar.css'
+import React from 'react';
+import '../styles/Navbar.css';
 
 function Navbar() {
-  return (
-    <div>
-       const toggleMenu = () => {
-    document.body.classList.toggle("open")
-  };
+  
+  const toggleMenu = () => {
+    document.body.classList.toggle("open");
+  }
 
-  return (
+  return ( 
     <nav className="navbar">
       <button onClick={toggleMenu} className="boton-Menu">
         {/* Texto del botón (si es necesario) */}
+       <img src="src/Img/K.gif" alt="" />
       </button>
       <button className="boton-home">Home</button>
       <div className="dropdowns">
@@ -27,9 +27,6 @@ function Navbar() {
       </div>
     </nav>
   );
-
-    </div>
-  )
 }
 
-export default Navbar
+export default Navbar;
