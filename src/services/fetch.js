@@ -31,7 +31,7 @@ const obtenerUsuario = async (endpoint) => {
 export {guardarUsuario}
 
 //Put
-export async function actualizaDatos(id, obj) {
+async function actualizaDatos(id, obj) {
   try {
     //Se utiliza el ID para actualizar lo que este en la API
       const response = await fetch(`http://localhost:3001/productos/${id}`, {

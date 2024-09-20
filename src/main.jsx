@@ -10,6 +10,7 @@ import Artcomputadoras from './pages/Artcomputadoras.jsx';
 import Otros from './pages/Otros.jsx';
 import Promociones from './pages/Promociones.jsx';
 import Relojes from './pages/Relojes.jsx';
+import PaginaAdmi from './pages/PaginaAdmi.jsx';
 
 const router = createBrowserRouter ([
   {
@@ -43,7 +44,11 @@ const router = createBrowserRouter ([
   {
     path: "/Watches",
     element: <Relojes/>
-  } 
+  },
+  {
+    path: "/administrador",
+    element: <PaginaAdmi/>
+  }  
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
