@@ -1,8 +1,26 @@
 import React from 'react';
 import '../styles/Navbar.css';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
-  
+  const rutas = useNavigate()
+
+ function paginaCel() {
+  rutas('/Artcelular')
+ }
+ function paginaCom() {
+  rutas('/Artcomputadoras')
+ }
+ function paginaOtros() {
+  rutas('/Promociones')
+ }
+ function paginaWatches() {
+  rutas('/Relojes')
+ }
+ function paginaPrincipal() {
+  rutas('/Home')
+ }
+
   const toggleMenu = () => {
     document.body.classList.toggle("open");
   }
@@ -18,10 +36,11 @@ function Navbar() {
         <div className="dropdown">
           <button className="boton-services">Servicios</button>
           <div className="dropdown-menu">
-            <button>Articulos celular</button>
-            <button>Articulos computadora</button>
-            <button>Relojes inteligentes</button>
-            <button>Otros</button>
+            <button onClick={paginaCel}>Articulos celular</button>
+            <button onClick={paginaCom}>Articulos computadora</button>
+            <button onClick={paginaWatches}>Relojes inteligentes</button>
+            <button onClick={paginaOtros}>Otros</button>
+            <button onClick={paginaPrincipal}>Volver</button>
           </div>
         </div>
       </div>
@@ -29,4 +48,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar

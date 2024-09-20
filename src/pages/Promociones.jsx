@@ -1,11 +1,12 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 function Promociones() {
   return (
     <div>
-      <img src="" alt="" />
+     <Navbar/>
     </div>
   )
 }
-
+ 
 export default Promociones

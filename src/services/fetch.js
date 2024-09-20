@@ -47,6 +47,7 @@ export async function actualizaDatos(id, obj) {
       console.error(error);
   }
 }
+export { actualizaDatos }
 //Delete
 async function deleteProduct(id) {
     try {

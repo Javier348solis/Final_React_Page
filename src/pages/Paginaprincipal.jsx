@@ -14,24 +14,24 @@ function Paginaprincipal() {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="..."/>
+      <img src="src/Img/img relojes/WhatsApp Image 2024-09-09 at 10.58.38 AM.jpeg" class="d-block w-100" alt="" width={300} height={300}/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>Reloj inteligente</h5>
+        <p>₡20.000(Incluye audifonos)</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
+      <img src="src/Img/img otros/WhatsApp Image 2024-09-09 at 10.58.55 AM.jpeg" class="d-block w-100" alt="" width={300} height={300}/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>Parlante con audifonos T&G</h5>
+        <p>₡25.000 (Incluye cargador tipo c)</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
+      <img src="src/Img/img celulares/WhatsApp Image 2024-09-09 at 10.58.11 AM.jpeg" class="d-block w-100" alt="" width={300} height={300}/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>Conjunto de cables tipo C charging</h5>
+        <p>₡7.000 (Garantia: 2 meses)</p>
       </div>
     </div>
   </div>

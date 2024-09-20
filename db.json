@@ -1,40 +1,13 @@
 {
   "users": [
     {
-      "id": "cec1",
+      "id": "589a",
       "name": "Javier",
-      "email": "javier@.com",
-      "password": "1234"
-    },
-    {
-      "id": "2ba5",
-      "name": "Javier Solis",
-      "email": "jasore34@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "b08f",
-      "name": "Yocelyn",
-      "email": "yoss@.com",
-      "password": "1234"
-    },
-    {
-      "id": "321b",
-      "name": "Yoss",
-      "email": "pepe@.com",
-      "password": "1234"
-    },
-    {
-      "id": "27df",
-      "name": "Jean",
-      "email": "jean@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "fa2d",
-      "name": "Jean c",
-      "email": "jean20@gmail.com",
+      "email": "javiersolis@gmail.com",
       "password": "1234"
     }
+  ],
+  "productos": [
+    
   ]
 }
