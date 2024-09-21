@@ -15,7 +15,7 @@ import PaginaAdmi from './pages/PaginaAdmi.jsx';
 const router = createBrowserRouter ([
   {
     path: "/",
-    element: <Form_Registro/>
+    element: <Navbar/>
   },
   {
     path: "/Inicio",
