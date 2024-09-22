@@ -62,7 +62,7 @@ function Form_Registro() {
         onChange={(e) => setPassword(e.target.value)}
         className='espacio-contra'
         type="password"
-        placeholder='Contraseña'
+        placeholder='Contraseña' 
       />
       <button onClick={validacionUsuario} className='botoncito' type="submit">Registrarse</button>
     </div>

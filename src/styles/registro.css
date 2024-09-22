@@ -1,32 +1,61 @@
-.Titu{
-    display: flex;
-    justify-content: center;
-    color: rgb(220, 11, 11);
-}
-.Contenedor-principal{
-    border: 5px solid white;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #110283 50%, url('../Img/technology-785742.jpg') no-repeat right center / cover);
+  }
+  
+  .contenedor-registro {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     padding: 20px;
-    border-radius: 20px;
-    background-color: black;
-}
-input{
-    width: 350px;
-    height: 25px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: 2px solid white;
     
+  }
+  
+  .Titulo {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white; 
+    text-shadow: 2px 2px 5px rgba(215, 6, 6, 0.7); 
 }
-input::placeholder{
-    color: white;
+
+  
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  input:focus {
+    border-color: #4CAF50; /* Cambia el color al hacer foco */
+    outline: none;
+  }
+  
+  .botoncito {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white; /* Color del texto en el botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .botoncito:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al pasar el mouse */
+  }
+  
+  .botoncito:active {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra al hacer clic */
+  }
+  input::placeholder {    
+    color: black !important;
+    text-shadow: 2px 2px 5px rgba(215, 6, 6, 0.7); 
 }
-.boton-inicio{
-    border-radius: 10px;
-    color: aqua;
-    box-shadow: 2px 3px 3px aqua;
-}
-body{
-    background-color: rgb(111, 109, 109);
-}
+ 
+    

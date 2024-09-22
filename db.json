@@ -5,9 +5,13 @@
       "name": "Javier",
       "email": "javiersolis@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "86fd",
+      "name": "Javier Solis Retana",
+      "email": "javiersolisretana@gmail.com",
+      "password": "1234"
     }
   ],
-  "productos": [
-    
-  ]
+  "productos": []
 }
