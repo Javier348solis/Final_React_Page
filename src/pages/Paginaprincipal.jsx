@@ -1,56 +1,96 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import React, { useEffect, useState } from 'react';
 import '../styles/paginaPri.css'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-function Paginaprincipal() {
+const Carousel = ({ items }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === items.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [items.length]);
+
   return (
-    <div>
-      <Navbar />
-      <div className="carousel-container" style={{ marginTop: '20px' }}> {/* Ajusta el valor según necesites */}
-        <div id="carouselExampleCaptions" className="carousel slide" data-bs-interval="4000">
-          <div className="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+   
+    <div className="carousel-container">
+       <Navbar/>
+      <div
+        className="carousel-wrapper"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {items.map((item, index) => (
+          <div key={index} className="carousel-item">
+            <img src={item.image} alt={`Slide ${index}`} className="carousel-image" />
+            <div className="carousel-info">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <p className="price">₡{item.price}</p>
+            </div>
+            <Footer/>
           </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="src/Img/img relojes/WhatsApp Image 2024-09-09 at 10.58.38 AM.jpeg" className="d-block w-100" alt="Reloj inteligente" />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>Reloj inteligente</h5>
-                <p>₡20.000 (Incluye audífonos)</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src="src/Img/img otros/WhatsApp Image 2024-09-09 at 10.58.55 AM.jpeg" className="d-block w-100" alt="Parlante con audífonos T&G" />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>Parlante con audífonos T&G</h5>
-                <p>₡25.000 (Incluye cargador tipo C)</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src="src/Img/img celulares/WhatsApp Image 2024-09-09 at 10.58.11 AM.jpeg" className="d-block w-100" alt="Conjunto de cables tipo C" />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>Conjunto de cables tipo C charging</h5>
-                <p>₡7.000 (Garantía: 2 meses)</p>
-              </div>
-            </div>
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
-export default Paginaprincipal;
+// Uso del componente Carousel
+const PaginaPrincipal = () => {
+  const items = [
+    {
+      image: 'https://extremetechcr.com/tienda/18931-large_default/razer-basilisk-v3.jpg',
+      title: 'Producto 1',
+      description: 'Mouse Razer 12.000 PSI',
+      price: '20.000',
+    },
+    {
+      image: 'https://extremetechcr.com/tienda/20939-large_default/steelseries-apex-3-tkl-ingles.jpg',
+      title: 'Producto 2',
+      description: 'Mouse Apex 14.000 PSI',
+      price: '25.000',
+    },
+    {
+      image: 'https://extremetechcr.com/tienda/28006-large_default/razer-huntsman-mini-60-switch-purple-espanol.jpg',
+      title: 'Producto 3',
+      description: 'Teclado Razer',
+      price: '19.000',
+    },
+    {
+      image: 'https://extremetechcr.com/tienda/38486-large_default/parlante-portatil-sony-bluetooth-negro-srs-xb100.jpg',
+      title: 'Producto 4',
+      description: 'Parlante Sony',
+      price: '27.500',
+    },
+    {
+      image: 'https://extremetechcr.com/tienda/29955-large_default/primus-darth-vader-arcus-110t-phs-s110dv.jpg',
+      title: 'Producto 5',
+      description: 'Headset Primus',
+      price: '15.000',
+    },
+    {
+      image: 'https://extremetechcr.com/tienda/35100-large_default/webcam-klip-extreme-laguham-1080p-kwc-500.jpg',
+      title: 'Producto 6',
+      description: 'Cam web klip',
+      price: '11.000',
+    },
+  ];
+
+  return (
+    <div>
+      <h1>Carrusel de Productos</h1>
+      <Carousel items={items} />
+    </div>
+  );
+};
+
+export default PaginaPrincipal;
+
+
+
 

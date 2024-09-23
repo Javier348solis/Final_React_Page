@@ -25,6 +25,13 @@
       "email": "javier23@.com",
       "password": "1234",
       "type": "cliente"
+    },
+    {
+      "id": "4d74",
+      "name": "Yocelyn Rivera",
+      "email": "rivera@gmailcom",
+      "password": "1234",
+      "type": "propietario"
     }
   ],
   "productos": []
