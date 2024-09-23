@@ -1,18 +1,22 @@
 body{
-    background-color: black;
-    font-family: Arial, sans-serif;
-    margin: 0;
+    border: 0;
     padding: 0;
-    height: 100vh;
+    cursor: pointer;
+    line-height: 1;
+    color: inherit;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.footer-cont{
+    width: 100%;
 }
 footer{
     background-color: black;
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 30%;
 }
 .titulo-footer{
     font-size: 1.5em;
@@ -38,7 +42,7 @@ footer ul li a:hover{
     display: flex;
     justify-content: center;
     margin-block: 20px;
-    width: 100%;
+    width: 50%;
 }
 .Redes a{
     color: black;

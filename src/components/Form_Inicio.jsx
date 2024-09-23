@@ -1,48 +1,49 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { obtenerUsuario } from '../services/fetch'
-import '../styles/Inicio.css'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { obtenerUsuario } from '../services/fetch';
+import '../styles/Inicio.css';
 
 function Form_Inicio() {
-  const [lista, setLista] = useState([])
-  const [correo, setCorreo] = useState("")
-  const [password, setPassword] = useState("")
-  const navigate = useNavigate()
+  const [lista, setLista] = useState([]);
+  const [correo, setCorreo] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-
-  useEffect(()=>{
+  useEffect(() => {
     async function obtenerDatos() {
-      const datos = await obtenerUsuario("users")
-      setLista(datos)
+      const datos = await obtenerUsuario("users");
+      setLista(datos);
     }
-    obtenerDatos()
-  },[])
-  const validarInputs = ()=>{
-    const user = lista.find(users => users.email === correo && users.password === password)
-    const admin = lista.find(users => "adminperfume@gmail.com" === correo && "administrator2000" === password)
-    if(admin){
-      localStorage.setItem("admin",true)
-      navigate("/admin")
-      return
-    }
+    obtenerDatos();
+  }, []);
+
+  const validarInputs = () => {
+    const user = lista.find(users => users.email === correo && users.password === password);
+    
     if (user) {
-      localStorage.setItem("idUsaurio", user.id)
-      navigate("/home")
+      // Aquí puedes mostrar la alerta de tipo de usuario
+      if (user.type === 'propietario') {
+        alert("Bienvenido, Administrador!");
+        localStorage.setItem("admin", true);
+        navigate("/admin");
+      } else {
+        alert("Bienvenido, Cliente!");
+        localStorage.setItem("idUsuario", user.id);
+        navigate("/home");
+      }
     } else {
-      alert("Datos incorrectos")
+      alert("Datos incorrectos");
     }
-  }
+  };
 
   return (
-    <>
     <div className='Contenedor-principal'>
       <h1 className='Titu'>Log-In</h1>
-      <input onChange={(e)=> {setCorreo(e.target.value)}} type="text" placeholder='Correo electronico'/>
-      <input onChange={(e)=> {setPassword(e.target.value)}} type="password" placeholder='Contraseña'/>
+      <input onChange={(e) => { setCorreo(e.target.value); }} type="text" placeholder='Correo electrónico' />
+      <input onChange={(e) => { setPassword(e.target.value); }} type="password" placeholder='Contraseña' />
       <button className='botonci' onClick={validarInputs}>Ingresar</button>
     </div>
-    </>
-  )
+  );
 }
 
-export default Form_Inicio
+export default Form_Inicio;

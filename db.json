@@ -1,10 +1,38 @@
 {
   "users": [
     {
-      "id": "cec1",
+      "id": "589a",
       "name": "Javier",
-      "email": "javier@.com",
+      "email": "javiersolis@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "86fd",
+      "name": "Javier Solis Retana",
+      "email": "javiersolisretana@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "f31f",
+      "name": "Javier Solis",
+      "email": "javier12@.com",
+      "password": "1234",
+      "type": "propietario"
+    },
+    {
+      "id": "f4b7",
+      "name": "Javier Solis Retana",
+      "email": "javier23@.com",
+      "password": "1234",
+      "type": "cliente"
+    },
+    {
+      "id": "4d74",
+      "name": "Yocelyn Rivera",
+      "email": "rivera@gmailcom",
+      "password": "1234",
+      "type": "propietario"
     }
-  ]
+  ],
+  "productos": []
 }

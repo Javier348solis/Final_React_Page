@@ -1,0 +1,68 @@
+.contenedor-carrusel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background-color: #222;
+  }
+  
+  .vuelta-carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px; 
+  }
+  
+  .imagen-carrusel {
+    width: 450px;
+    height: 450px; 
+    object-fit: cover; 
+  }
+  
+  .informacion-carrusel{
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .precio {
+    font-weight: bold;
+    color: white;
+  }
+  .contenedor-carrusel {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .vuelta-carrusel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  .letra{
+    color: white;
+  }
