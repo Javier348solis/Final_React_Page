@@ -1,31 +1,25 @@
-
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-
 .carousel-container {
     margin-top: 20px; 
 }
-
 
 .carousel-inner img {
     width: 100%; 
     height: auto;
 }
 
-
 .navbar {
     background-color: #4CAF50; 
 }
 
-
 .navbar a {
     color: white;
 }
-
 
 @media (max-width: 768px) {
     .carousel-caption {

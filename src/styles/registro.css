@@ -1,61 +1,93 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #110283 50%, url('../Img/technology-785742.jpg') no-repeat right center / cover);
-  }
-  
-  .contenedor-registro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    
-  }
-  
-  .Titulo {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: white; 
-    text-shadow: 2px 2px 5px rgba(215, 6, 6, 0.7); 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #110283 50%, url('../Img/technology-785742.jpg') no-repeat right center / cover);
 }
 
-  
-  input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 300px;
-  }
-  
-  input:focus {
-    border-color: #4CAF50; /* Cambia el color al hacer foco */
-    outline: none;
-  }
-  
-  .botoncito {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Color del botón */
-    color: white; /* Color del texto en el botón */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .botoncito:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al pasar el mouse */
-  }
-  
-  .botoncito:active {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra al hacer clic */
-  }
-  input::placeholder {    
-    color: black !important;
-    text-shadow: 2px 2px 5px rgba(215, 6, 6, 0.7); 
+.contenedor-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgb(59, 56, 56); 
+  border-radius: 10px; 
 }
- 
-    
+
+.Titulo {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: white; 
+  text-shadow: 2px 2px 5px rgba(215, 6, 6, 0.7); 
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 2px solid red; 
+  border-radius: 5px;
+  width: 300px;
+  background-color: black; 
+  color: white; 
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.botoncito {
+  padding: 10px 20px;
+  background-color: white;
+  color: black; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 255, 0.5);
+}
+
+.botoncito:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 255, 0.7);
+}
+
+.botoncito:active {
+  box-shadow: 0 2px 10px rgba(0, 0, 255, 0.5); 
+}
+
+input::placeholder {    
+  color: white !important; 
+  text-shadow: 2px 2px 5px rgba(215, 6, 6, 0.7); 
+}
+.tipo-usuario {
+  display: flex; 
+  margin: 20px 0;
+  color: white; 
+}
+
+.radio-label {
+  display: flex; 
+  align-items: center; 
+  margin-right: 30px;
+  font-size: 1em; 
+  cursor: pointer; 
+}
+
+.radio-input {
+  margin-right: 10px; 
+  width: 20px; 
+  height: 20px; 
+  accent-color: #4CAF50;
+}
+
+
+.radio-input:checked + span {
+  color: #4CAF50; 
+}
+
+.radio-input:focus {
+  outline: none; 
+  box-shadow: 0 0 5px #4CAF50; 
+}

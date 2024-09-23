@@ -1,27 +1,26 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/registro.css'
-import { obtenerUsuario, guardarUsuario } from '../services/fetch'
-
+import '../styles/registro.css';
+import { obtenerUsuario, guardarUsuario } from '../services/fetch';
 
 function Form_Registro() {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userType, setUserType] = useState('cliente'); 
   const [datos, setDatos] = useState([]);
-  const navegarWeb = useNavigate()
+  const navegarWeb = useNavigate();
 
   useEffect(() => {
     const getUsers = async () => {
-        const dataUsuarios = await obtenerUsuario("users");
-        setDatos(dataUsuarios);
+      const dataUsuarios = await obtenerUsuario("users");
+      setDatos(dataUsuarios);
     };
     getUsers();
   }, []);
 
-  // Validamos los espacios vacíos en cada uno de los inputs
-  const validacionUsuario = async() => {
-    if(!userName || !email || !password) {
+  const validacionUsuario = async () => {
+    if (!userName || !email || !password) {
       alert("Por favor, llene todos los espacios");
       return;
     } else {
@@ -32,7 +31,8 @@ function Form_Registro() {
         let usuario = {
           name: userName,
           email: email,
-          password: password
+          password: password,
+          type: userType 
         };
         await guardarUsuario(usuario, "users");
         navegarWeb("/Inicio");
@@ -62,12 +62,34 @@ function Form_Registro() {
         onChange={(e) => setPassword(e.target.value)}
         className='espacio-contra'
         type="password"
-        placeholder='Contraseña' 
+        placeholder='Contraseña'
       />
+      
+     
+      <div className='tipo-usuario'>
+        <label>
+          <input
+            type="radio"
+            value="cliente"
+            checked={userType === 'cliente'}
+            onChange={(e) => setUserType(e.target.value)}
+          />
+          Cliente
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="propietario"
+            checked={userType === 'propietario'}
+            onChange={(e) => setUserType(e.target.value)}
+          />
+          Administrador
+        </label>
+      </div>
+
       <button onClick={validacionUsuario} className='botoncito' type="submit">Registrarse</button>
     </div>
   );
 }
 
-
-export default Form_Registro
+export default Form_Registro;

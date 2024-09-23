@@ -11,6 +11,20 @@
       "name": "Javier Solis Retana",
       "email": "javiersolisretana@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "f31f",
+      "name": "Javier Solis",
+      "email": "javier12@.com",
+      "password": "1234",
+      "type": "propietario"
+    },
+    {
+      "id": "f4b7",
+      "name": "Javier Solis Retana",
+      "email": "javier23@.com",
+      "password": "1234",
+      "type": "cliente"
     }
   ],
   "productos": []
