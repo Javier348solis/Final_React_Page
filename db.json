@@ -34,5 +34,17 @@
       "type": "propietario"
     }
   ],
-  "productos": []
+  "productos": [
+    {
+
+  }
+],
+"administrador": [
+  {
+    "id": "001",
+      "name": "Oscar Olivares Gamboa",
+      "email": "K&Badmin@gmail.com",
+      "password": "k&bJasore12$"
+  }
+]
 }

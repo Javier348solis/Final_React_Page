@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { obtenerUsuario } from '../services/fetch';
 import '../styles/Inicio.css';
 
-function Form_Inicio() {
+function Form_Inicio({ setIsAuthenticated }) {
   const [lista, setLista] = useState([]);
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
@@ -21,14 +21,17 @@ function Form_Inicio() {
     const user = lista.find(users => users.email === correo && users.password === password);
     
     if (user) {
-      // Aquí puedes mostrar la alerta de tipo de usuario
+     
       if (user.type === 'propietario') {
         alert("Bienvenido, Administrador!");
         localStorage.setItem("admin", true);
+        localStorage.setItem("idUsuario", user.id); 
+        setIsAuthenticated(true); 
         navigate("/admin");
       } else {
         alert("Bienvenido, Cliente!");
         localStorage.setItem("idUsuario", user.id);
+        setIsAuthenticated(true);
         navigate("/home");
       }
     } else {
@@ -47,3 +50,4 @@ function Form_Inicio() {
 }
 
 export default Form_Inicio;
+
