@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/paginaPri.css'
+import '../styles/paginaPri.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -12,35 +12,44 @@ const Carousel = ({ items }) => {
         prevIndex === items.length - 1 ? 0 : prevIndex + 1
       );
     }, 4000);
-
     return () => clearInterval(interval);
   }, [items.length]);
 
+  const imganterior = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? items.length - 1 : prevIndex - 1
+    );
+  };
+
+  const imgposterior = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === items.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
-   
-    <div className="carousel-container">
-       <Navbar/>
-      <div
-        className="carousel-wrapper"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
+    <div className="contenedor-carrusel">
+      <Navbar />
+      <div className="vuelta-carrusel" style={{ transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease' }}>
         {items.map((item, index) => (
           <div key={index} className="carousel-item">
-            <img src={item.image} alt={`Slide ${index}`} className="carousel-image" />
-            <div className="carousel-info">
+            <img src={item.image} alt={`Slide ${index}`} className="imagen-carrusel" />
+            <div className="informacion-carrusel">
               <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <p className="price">₡{item.price}</p>
+              <p className='letra'>{item.description}</p>
+              <p className="precio">₡{item.price}</p>
             </div>
-            <Footer/>
           </div>
         ))}
       </div>
+      <button className="carousel-button prev" onClick={imganterior}>Prev</button>
+      <button className="carousel-button next" onClick={imgposterior}>Next</button>
+      <Footer />
     </div>
   );
 };
 
-// Uso del componente Carousel
+
 const PaginaPrincipal = () => {
   const items = [
     {
@@ -84,13 +93,9 @@ const PaginaPrincipal = () => {
   return (
     <div>
       <h1>Carrusel de Productos</h1>
-      <Carousel items={items} />
+      <Carousel items={items}/>
     </div>
   );
 };
 
 export default PaginaPrincipal;
-
-
-
-

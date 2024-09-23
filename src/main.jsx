@@ -4,18 +4,19 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter, createBrowserRou
 import Form_Registro from './components/Form_Registro.jsx';
 import Form_Inicio from './components/Form_Inicio.jsx';
 import Navbar from './components/Navbar.jsx';
-import Paginaprincipal from './pages/Paginaprincipal.jsx';
+import PaginaPrincipal from './pages/Paginaprincipal.jsx';
 import Artcelular from './pages/Artcelular.jsx';
 import Artcomputadoras from './pages/Artcomputadoras.jsx';
 import Otros from './pages/Otros.jsx';
 import Promociones from './pages/Promociones.jsx';
 import Relojes from './pages/Relojes.jsx';
-import PaginaAdmi from './pages/PaginaAdmi.jsx';
+import Contacto from './components/contacto.jsx';
+
 
 const router = createBrowserRouter ([
   {
     path: "/",
-    element: <Form_Registro/>
+    element: <PaginaPrincipal/>
   },
   {
     path: "/Inicio",
@@ -23,7 +24,7 @@ const router = createBrowserRouter ([
   },
   {
     path: "/Home",
-    element: <Paginaprincipal/>
+    element: <PaginaPrincipal/>
   },
   {
     path: "/Celulares",

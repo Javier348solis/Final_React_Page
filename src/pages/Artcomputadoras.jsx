@@ -22,7 +22,7 @@ function Artcomputadoras() {
           Eres Administrador
         </button>
       ) : (
-        <p className="text-danger">Tienes que ingresar como administrador, por favor.</p>
+        <p className="Alerta-texto">Tienes que ingresar como administrador, por favor.</p>
       )}
     </div>
   )

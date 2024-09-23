@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import Modal from './Modal';
-import { deleteProduct } from '../services/fetch';
+import { deleteProduct, actualizaDatos } from '../services/fetch';
 
 function Navbar() {
   const rutas = useNavigate();
