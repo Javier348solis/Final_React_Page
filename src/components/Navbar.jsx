@@ -47,8 +47,6 @@ function Navbar() {
           <div className="dropdown-menu">
             <button onClick={() => rutas('/Celulares')}>Articulos celular</button>
             <button onClick={() => rutas('/Computadoras')}>Articulos computadora</button>
-            <button onClick={() => rutas('/Watches')}>Relojes inteligentes</button>
-            <button onClick={() => rutas('/Otro')}>Otros</button>
             <button onClick={() => rutas('/Home')}>Volver</button>
           </div>
         </div>

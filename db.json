@@ -51,6 +51,13 @@
   "productos": [
     {
       "id": "58d6"
+    },
+    {
+      "id": "1b93",
+      "img": {},
+      "nombre": "aaa",
+      "precio": "123",
+      "descripcion": "aaa"
     }
   ],
   "administrador": [
@@ -61,7 +68,5 @@
       "password": "k&bJasore12$"
     }
   ],
-  "imagenes": [
-
-  ]
+  "imagenes": []
 }

@@ -13,13 +13,7 @@ function Footer() {
         <li><a href="#"><i className="im-Telegram"></i></a></li>
       </ul>
       <div className="info">
-        <ul>
-          <li className="footer-lista">Ofertas</li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Categorias</a></li>
-          <li><a href="#">Ayuda</a></li>
-        </ul>
+        
         <ul>
           <li className="footer-lista">Informacion</li>
           <li><a href="#" onClick={(e) => { e.preventDefault(); openModal(); }}>Acerca de Nosotros</a></li>

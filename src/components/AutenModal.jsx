@@ -11,7 +11,6 @@ function AutenModal({ setIsAuthenticated }) {
     if (userType === 'propietario') {
       setIsAdmin(true);
       setModalVisible(true); 
-      console.log("handleLogin:", handleLogin);
     }
   };
 

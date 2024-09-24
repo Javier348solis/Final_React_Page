@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import '../styles/paginaPri.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Botones from '../components/Botones';
+import { guardarUsuario } from '../services/fetch';
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,11 +92,66 @@ const PaginaPrincipal = () => {
       price: '11.000',
     },
   ];
+  const [imagen, setImagen] = useState(null);
+  const [nombre, setNombre] = useState("");
+  const [precio, setPrecio] = useState("");
+  const [descripcion, setDescripcion] = useState("");
 
+
+  const manejarEnvio = async(e) => {
+    e.preventDefault();
+    const nuevoProducto = {
+      img:imagen,
+      nombre:nombre,
+      precio:precio,
+      descripcion:descripcion,
+    };
+    console.log("Producto agregado:", nuevoProducto);
+    await guardarUsuario(nuevoProducto,'productos')
+  };
   return (
     <div>
       <h1>Carrusel de Productos</h1>
       <Carousel items={items}/>
+
+      <form onSubmit={manejarEnvio} className="formulario-producto">
+      <div>
+        <label>Imagen:</label>
+        <input 
+          type="file" 
+          accept="image/*" 
+          onChange={(e) => setImagen(e.target.files[0])} 
+          required 
+        />
+      </div>
+      <div>
+        <label>Nombre:</label>
+        <input 
+          type="text" 
+          value={nombre} 
+          onChange={(e) => setNombre(e.target.value)} 
+          required 
+        />
+      </div>
+      <div>
+        <label>Precio:</label>
+        <input 
+          type="number" 
+          value={precio} 
+          onChange={(e) => setPrecio(e.target.value)} 
+          required 
+        />
+      </div>
+      <div>
+        <label>Descripción:</label>
+        <textarea 
+          value={descripcion} 
+          onChange={(e) => setDescripcion(e.target.value)} 
+          required 
+        />
+      </div>
+      <button type="submit">Agregar Producto</button>
+    </form>
     </div>
   );
 };

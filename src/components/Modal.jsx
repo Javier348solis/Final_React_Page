@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Modal.css';
+import { deleteProduct } from '../services/fetch';
 
 const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
   return (
@@ -20,7 +21,7 @@ const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
                   min="1"
                   onChange={(e) => onUpdate(producto.id, e.target.value)}
                 />
-                <button onClick={() => onDelete(producto.id)}>Eliminar</button>
+                <button onClick={() =>deleteProduct(producto.id)}>Eliminar</button>
               </li>
             ))}
           </ul>

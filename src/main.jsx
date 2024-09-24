@@ -12,7 +12,7 @@ import Relojes from './pages/Relojes.jsx';
 import RutasPrivadas from './routes/RutasPrivadas.jsx';
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticación
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const router = createBrowserRouter([
     {
@@ -21,19 +21,15 @@ const App = () => {
     },
     {
       path: "/Inicio",
-      element: <Form_Inicio setIsAuthenticated={setIsAuthenticated} />, // Pasa setIsAuthenticated
+      element: <Form_Inicio setIsAuthenticated={setIsAuthenticated} />, // 
     },
-    // {
-    //   path: "/Home",
-    //   // element: (
-    //     // <RutasPrivadas isAuthenticated={isAuthenticated}>
-    //       <PaginaPrincipal />
-    //     {/* </RutasPrivadas> */}
-    //   // ),
-    // },
     {
       path: "/Home",
-      element: <PaginaPrincipal />,
+      element: (
+        <RutasPrivadas isAuthenticated={isAuthenticated}>
+          <PaginaPrincipal />
+        </RutasPrivadas>
+      ),
     },
     {
       path: "/Celulares",
