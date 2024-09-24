@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Footer.css'
+import Quienes from '../pages/Quienes';
 
 function Footer() {
   return (
@@ -21,7 +22,7 @@ function Footer() {
         </ul>
         <ul>
           <li className="footer-lista">Informacion</li>
-          <li><a href="#">Acerca de nosotros</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); openModal(); }}>Acerca de Nosotros</a></li>
           <li><a href="#">Ubicacion</a></li>
           <li><a href="src/components/contacto.jsx">Contacto</a></li>
         </ul>
