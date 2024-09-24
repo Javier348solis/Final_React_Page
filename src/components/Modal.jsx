@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Modal.css'
+import '../styles/Modal.css';
 
 const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
   return (
@@ -13,10 +13,11 @@ const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
           <ul>
             {productos.map(producto => (
               <li key={producto.id}>
-                <span>{producto.nombre} - ${producto.precio}</span>
+                <span>{producto.description} - {producto.price} (Cantidad: {producto.cantidad})</span>
                 <input
                   type="number"
                   value={producto.cantidad}
+                  min="1"
                   onChange={(e) => onUpdate(producto.id, e.target.value)}
                 />
                 <button onClick={() => onDelete(producto.id)}>Eliminar</button>
@@ -30,3 +31,6 @@ const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
 };
 
 export default Modal;
+
+
+

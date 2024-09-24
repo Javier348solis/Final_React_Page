@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import imagenesCelular from '../pages/Artcelular';
-import { obtenerUsuario } from '../services/fetch';
+// Assume this is part of your parent component where the Modal is rendered
+import React, { useState } from 'react';
+import Modal from './Modal';
 
-const CompPadre = () => {
-  const [items, setItems] = useState([]);
+const ComponentePadre = ({ userType }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await obtenerUsuario('imagenes'); 
-      if (Array.isArray(data)) {
-        setItems(data);
-      } else {
-        console.log('La respuesta no es un array');
-      }
-    };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
-    fetchData();
-  }, []);
+ 
 
   return (
     <div>
-      <h1>Galería de Imágenes</h1>
-      <imagenesCelular items={items} />
+      <button onClick={handleOpenModal}>Abrir Carrito</button>
+      {isModalOpen && (
+        <Modal
+          productos={productos}
+          onClose={handleCloseModal}
+          onDelete={handleDelete}
+          onUpdate={handleUpdate}
+          userType={userType} // Pass userType here
+        />
+      )}
     </div>
   );
 };
 
-export default CompPadre;
+export default ComponentePadre;

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { obtenerUsuario } from '../services/fetch';
 import '../styles/Inicio.css';
-import AutenModal from './AutenModal';
+import Form_Registro from './Form_Registro';
 
-function Form_Inicio({ setIsAuthenticated }) {
+
+function Form_Inicio({ setIsAuthenticated, handleLogin }) {
   const [lista, setLista] = useState([]);
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,7 @@ function Form_Inicio({ setIsAuthenticated }) {
         localStorage.setItem("admin", true);
         localStorage.setItem("idUsuario", user.id); 
         setIsAuthenticated(true); 
-        handleLogin('propietario'); 
+        handleLogin('propietario');
         navigate("/admin");
       } else {
         alert("Bienvenido, Cliente!");
@@ -40,8 +41,6 @@ function Form_Inicio({ setIsAuthenticated }) {
     }
   };
   
-  
-
   return (
     <div className='Contenedor-principal'>
       <h1 className='Titu'>Log-In</h1>

@@ -23,13 +23,17 @@ const App = () => {
       path: "/Inicio",
       element: <Form_Inicio setIsAuthenticated={setIsAuthenticated} />, // Pasa setIsAuthenticated
     },
+    // {
+    //   path: "/Home",
+    //   // element: (
+    //     // <RutasPrivadas isAuthenticated={isAuthenticated}>
+    //       <PaginaPrincipal />
+    //     {/* </RutasPrivadas> */}
+    //   // ),
+    // },
     {
       path: "/Home",
-      element: (
-        <RutasPrivadas isAuthenticated={isAuthenticated}>
-          <PaginaPrincipal />
-        </RutasPrivadas>
-      ),
+      element: <PaginaPrincipal />,
     },
     {
       path: "/Celulares",

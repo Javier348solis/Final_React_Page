@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Form_Inicio from './Form_Inicio';
 import Modal from './Modal';
 
-
 function AutenModal({ setIsAuthenticated }) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -12,13 +11,17 @@ function AutenModal({ setIsAuthenticated }) {
     if (userType === 'propietario') {
       setIsAdmin(true);
       setModalVisible(true); 
+      console.log("handleLogin:", handleLogin);
     }
   };
 
   return (
     <div>
-      <Form_Inicio setIsAuthenticated={setIsAuthenticated} handleLogin={handleLogin} />
-
+      <Form_Inicio 
+        setIsAuthenticated={setIsAuthenticated} 
+        handleLogin={handleLogin} 
+      />
+      
       {modalVisible && isAdmin && (
         <Modal 
           productos={productos} 
