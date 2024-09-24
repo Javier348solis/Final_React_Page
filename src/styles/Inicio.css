@@ -1,3 +1,6 @@
+body{
+    background-image: url("../Img/orion-nebula-11107_1920.jpg");
+}
 .Titu {
     display: flex;
     justify-content: center;
@@ -9,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 50vh;
     padding: 20px;
     background-color: rgb(59, 56, 56);
     border-radius: 10px;

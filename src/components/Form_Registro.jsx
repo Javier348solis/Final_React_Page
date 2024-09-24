@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/registro.css';
 import { obtenerUsuario, guardarUsuario } from '../services/fetch';
 
@@ -65,7 +65,6 @@ function Form_Registro() {
         placeholder='Contraseña'
       />
       
-     
       <div className='tipo-usuario'>
         <label>
           <input
@@ -88,6 +87,10 @@ function Form_Registro() {
       </div>
 
       <button onClick={validacionUsuario} className='botoncito' type="submit">Registrarse</button>
+
+      <div className='login-link'>
+        <p className='Direccion-login'>¿Ya tienes una cuenta? <Link to="/Inicio" className='color-link'>Inicia sesión aquí</Link></p>
+      </div>
     </div>
   );
 }

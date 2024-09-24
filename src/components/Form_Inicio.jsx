@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { obtenerUsuario } from '../services/fetch';
 import '../styles/Inicio.css';
+import AutenModal from './AutenModal';
 
 function Form_Inicio({ setIsAuthenticated }) {
   const [lista, setLista] = useState([]);
@@ -21,12 +22,12 @@ function Form_Inicio({ setIsAuthenticated }) {
     const user = lista.find(users => users.email === correo && users.password === password);
     
     if (user) {
-     
       if (user.type === 'propietario') {
         alert("Bienvenido, Administrador!");
         localStorage.setItem("admin", true);
         localStorage.setItem("idUsuario", user.id); 
         setIsAuthenticated(true); 
+        handleLogin('propietario'); 
         navigate("/admin");
       } else {
         alert("Bienvenido, Cliente!");
@@ -38,6 +39,8 @@ function Form_Inicio({ setIsAuthenticated }) {
       alert("Datos incorrectos");
     }
   };
+  
+  
 
   return (
     <div className='Contenedor-principal'>

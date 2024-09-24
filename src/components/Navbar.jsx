@@ -3,6 +3,7 @@ import '../styles/Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import Modal from './Modal';
 import { deleteProduct, actualizaDatos } from '../services/fetch';
+import '../Img/K.gif'
 
 function Navbar() {
   const rutas = useNavigate();
@@ -36,18 +37,18 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+     <img src="src\Img\K.gif" alt="" />
       <button onClick={openModal} className="boton-Menu">
-        <img src="src/Img/K.gif" alt="" />
       </button>
       <button className="boton-home">Home</button>
       <div className="dropdowns">
         <div className="dropdown">
           <button className="boton-services">Servicios</button>
           <div className="dropdown-menu">
-            <button onClick={() => rutas('/Artcelular')}>Articulos celular</button>
-            <button onClick={() => rutas('/Artcomputadoras')}>Articulos computadora</button>
-            <button onClick={() => rutas('/Relojes')}>Relojes inteligentes</button>
-            <button onClick={() => rutas('/Promociones')}>Otros</button>
+            <button onClick={() => rutas('/Celulares')}>Articulos celular</button>
+            <button onClick={() => rutas('/Computadoras')}>Articulos computadora</button>
+            <button onClick={() => rutas('/Watches')}>Relojes inteligentes</button>
+            <button onClick={() => rutas('/Otro')}>Otros</button>
             <button onClick={() => rutas('/Home')}>Volver</button>
           </div>
         </div>
