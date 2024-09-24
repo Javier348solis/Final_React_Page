@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #110283 50%, url('../Img/technology-785742.jpg') no-repeat right center / cover);
+  background: linear-gradient(to right, #110283 50%, url('../Img/orion-nebula-11107_1920.jpg') no-repeat right center / cover);
 }
 
 .contenedor-registro {
@@ -12,8 +12,8 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 20px;
-  background-color: rgb(59, 56, 56); 
-  border-radius: 10px; 
+  background-color: rgb(47, 45, 45); 
+ 
 }
 
 .Titulo {

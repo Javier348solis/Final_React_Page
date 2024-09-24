@@ -32,7 +32,7 @@ function Form_Inicio({ setIsAuthenticated }) {
         alert("Bienvenido, Cliente!");
         localStorage.setItem("idUsuario", user.id);
         setIsAuthenticated(true);
-        navigate("/home");
+        navigate("/Home");
       }
     } else {
       alert("Datos incorrectos");

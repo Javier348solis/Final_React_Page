@@ -32,19 +32,33 @@
       "email": "rivera@gmailcom",
       "password": "1234",
       "type": "propietario"
+    },
+    {
+      "id": "1645",
+      "name": "Miguel",
+      "email": "ayyymiguel@gmail.com",
+      "password": "1234",
+      "type": "cliente"
+    },
+    {
+      "id": "f979",
+      "name": "Santiago",
+      "email": "nffhefvh@GMAIL.COM",
+      "password": "1234",
+      "type": "cliente"
     }
   ],
   "productos": [
     {
-
-  }
-],
-"administrador": [
-  {
-    "id": "001",
+      "id": "58d6"
+    }
+  ],
+  "administrador": [
+    {
+      "id": "001",
       "name": "Oscar Olivares Gamboa",
       "email": "K&Badmin@gmail.com",
       "password": "k&bJasore12$"
-  }
-]
+    }
+  ]
 }
