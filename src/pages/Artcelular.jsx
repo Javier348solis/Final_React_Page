@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/PaginaCelulares.css';
 import Navbar from '../components/Navbar';
 import Modal from '../components/Modal';
 import Footer from '../components/Footer';
-
+import { obtenerUsuario } from '../services/fetch';
+import ListaCards from '../components/ListaCards';
 const items = [
   { id: 1, url: 'https://extremetechcr.com/tienda/20640-large_default/aon-usb-c-35m-negro-ao-cb-5000.jpg', description: 'AON USB C', price: 3000 },
   { id: 2, url: 'https://extremetechcr.com/tienda/31137-large_default/xiaomi-2-in-1-de-micro-usb-a-tipoc-1m.jpg', description: 'Xiaomi 2 in 1 de Micro USB a', price: 5000 },
@@ -15,11 +16,22 @@ const items = [
   { id: 8, url: 'https://extremetechcr.com/tienda/28514-large_default/control-backbone-one-playstation-edition-para-iphones-bb-02-w-s.jpg', description: 'Control Backbone one - Playstation', price: 53000 },
 ];
 
+
 const PaginaCelulares = () => {
   const [productosCarrito, setProductosCarrito] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
-
-  const openModal = () => {
+  const [productos,setProductos] = useState([])
+  useEffect(()=>{
+      const traerProdutosAPI = async()=>{
+        const infoApi = await obtenerUsuario('productos')
+        setProductos(infoApi)
+        console.log(productos);
+        
+      }
+      traerProdutosAPI()
+  },[])
+  
+   const openModal = () => {
     setModalVisible(true);
   };
 
@@ -28,27 +40,27 @@ const PaginaCelulares = () => {
   };
 
   const addToCart = (item) => {
-    const existingProduct = productosCarrito.find(producto => producto.id === item.id);
+    const existingProduct = productosCarrito.find(producto => producto.item.id === item.id);
     if (existingProduct) {
       const updatedProducts = productosCarrito.map(producto =>
-        producto.id === item.id ? { producto, cantidad: producto.cantidad + 1 } : producto
+        producto.item.id === item.id ? { ...producto, cantidad: producto.cantidad + 1 } : producto
       );
       setProductosCarrito(updatedProducts);
     } else {
-      setProductosCarrito([productosCarrito, { item, cantidad: 1 }]);
+      setProductosCarrito([...productosCarrito, { item, cantidad: 1 }]);
     }
-    openModal(); // Abre el modal al añadir un producto
+    openModal();
   };
 
   const actualizarCantidad = (id, cantidad) => {
     const updatedProducts = productosCarrito.map(producto => 
-      producto.id === id ? { producto, cantidad: parseInt(cantidad, 10) } : producto
+      producto.item.id === id ? { ...producto, cantidad: parseInt(cantidad, 10) } : producto
     );
     setProductosCarrito(updatedProducts);
   };
 
   const eliminarProducto = (id) => {
-    const updatedProducts = productosCarrito.filter(producto => producto.id !== id);
+    const updatedProducts = productosCarrito.filter(producto => producto.item.id !== id);
     setProductosCarrito(updatedProducts);
   };
 
@@ -65,10 +77,9 @@ const PaginaCelulares = () => {
               <button className="add-to-cart" onClick={() => addToCart(item)}>Añadir al carrito</button>
             </div>
           </div>
-          
         ))}
       </div>
-      <Footer/>
+      <Footer />
 
       {modalVisible && (
         <Modal
@@ -78,9 +89,14 @@ const PaginaCelulares = () => {
           onUpdate={actualizarCantidad}
         />
       )}
+      {
+     <ListaCards productos={productos}  />
+
+}
+
+
     </div>
   );
 };
 
 export default PaginaCelulares;
-  

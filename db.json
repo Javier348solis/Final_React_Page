@@ -46,6 +46,55 @@
       "email": "nffhefvh@GMAIL.COM",
       "password": "1234",
       "type": "cliente"
+    },
+    {
+      "id": "267f",
+      "name": "Yocelyn Rivera",
+      "email": "yossrigu@gmail.com",
+      "password": "1234",
+      "type": "cliente"
+    },
+    {
+      "id": "7188",
+      "name": "Yocelyn",
+      "email": "mariana@gmail.com",
+      "password": "1234",
+      "type": "cliente"
+    },
+    {
+      "id": "ef10",
+      "name": "Javier",
+      "email": "solis@gmail.com",
+      "password": "1234",
+      "type": "propietario"
+    },
+    {
+      "id": "6682",
+      "name": "Santiago",
+      "email": "ariza@gmail.com",
+      "password": "12345",
+      "type": "propietario"
+    },
+    {
+      "id": "96c1",
+      "name": "Yoss",
+      "email": "marianita@gmail.com",
+      "password": "1234",
+      "type": "propietario"
+    },
+    {
+      "id": "8d01",
+      "name": "Ma",
+      "email": "masore@.com",
+      "password": "1234",
+      "type": "propietario"
+    },
+    {
+      "id": "163e",
+      "name": "nana",
+      "email": "nana@.com",
+      "password": "1234",
+      "type": "propietario"
     }
   ],
   "productos": [
@@ -58,6 +107,62 @@
       "nombre": "aaa",
       "precio": "123",
       "descripcion": "aaa"
+    },
+    {
+      "id": "1362",
+      "img": {},
+      "nombre": "efre",
+      "precio": "20.000",
+      "descripcion": "frfr3g3"
+    },
+    {
+      "id": "d7b3",
+      "img": {},
+      "nombre": "efre",
+      "precio": "20.000",
+      "descripcion": "frfr3g3"
+    },
+    {
+      "id": "42b0",
+      "img": {},
+      "nombre": "ruyru",
+      "precio": "22222",
+      "descripcion": "wrgrtu46"
+    },
+    {
+      "id": "6ca9",
+      "img": {},
+      "nombre": "aaa",
+      "precio": "1221",
+      "descripcion": "adsadas"
+    },
+    {
+      "id": "0a20",
+      "img": {},
+      "nombre": "aaaa",
+      "precio": "12222222",
+      "descripcion": "aaaaaaa"
+    },
+    {
+      "id": "ea76",
+      "img": {},
+      "nombre": "aaaaaaaa",
+      "precio": "1232",
+      "descripcion": "aaaaaaa"
+    },
+    {
+      "id": "32ca",
+      "img": {},
+      "nombre": "dasd",
+      "precio": "123",
+      "descripcion": "dasda"
+    },
+    {
+      "id": "2437",
+      "img": {},
+      "nombre": "wefer",
+      "precio": "42454",
+      "descripcion": "fererg"
     }
   ],
   "administrador": [

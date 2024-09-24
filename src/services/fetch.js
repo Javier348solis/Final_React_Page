@@ -34,7 +34,7 @@ export {guardarUsuario}
 async function actualizaDatos(id, obj) {
   try {
     //Se utiliza el ID para actualizar lo que este en la API
-      const response = await fetch(`http://localhost:3001/productos/${id}`, {
+      const response = await fetch(`http://localhost:3002/productos/${id}`, {
           method: "PUT",
           headers: {
               "Content-type": "application/json"
@@ -51,7 +51,7 @@ export { actualizaDatos }
 //Delete
 async function deleteProduct(id) {
     try {
-        const response = await fetch(`http://localhost:3001/productos/${id}`, {
+        const response = await fetch(`http://localhost:3002/productos/${id}`, {
             method: "DELETE",
             headers: { 'Content-Type': 'application/json', },
         });

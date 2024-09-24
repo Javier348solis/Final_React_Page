@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Modal.css';
-import { deleteProduct } from '../services/fetch';
 
 const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
   return (
@@ -13,15 +12,16 @@ const Modal = ({ productos, onClose, onDelete, onUpdate }) => {
         ) : (
           <ul>
             {productos.map(producto => (
-              <li key={producto.id}>
-                <span>{producto.description} - {producto.price} (Cantidad: {producto.cantidad})</span>
+              <li key={producto.item.id}>
+                <img src={producto.item.url} alt={producto.item.description} className="product-image" />
+                <span>{producto.item.description} - ₡{producto.item.price.toLocaleString()} (Cantidad: {producto.cantidad})</span>
                 <input
                   type="number"
                   value={producto.cantidad}
                   min="1"
-                  onChange={(e) => onUpdate(producto.id, e.target.value)}
+                  onChange={(e) => onUpdate(producto.item.id, e.target.value)}
                 />
-                <button onClick={() =>deleteProduct(producto.id)}>Eliminar</button>
+                <button onClick={() => onDelete(producto.item.id)}>Eliminar</button>
               </li>
             ))}
           </ul>

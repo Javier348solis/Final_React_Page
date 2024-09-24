@@ -1,0 +1,62 @@
+.image-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .image-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .image-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+  
+  .description {
+    margin-top: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .price {
+    font-size: 1.25rem;
+    color: #28a745; /* Color verde para el precio */
+    margin: 5px 0;
+  }
+  
+  .add-to-cart,
+  .delete-button {
+    background-color: #007bff; /* Color de fondo para el botón */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-to-cart:hover,
+  .delete-button:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
+  }
+  
+  .delete-button {
+    background-color: #dc3545; /* Color de fondo rojo para eliminar */
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333; /* Color más oscuro al pasar el mouse */
+  }
+  

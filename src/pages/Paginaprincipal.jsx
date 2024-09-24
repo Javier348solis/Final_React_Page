@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Botones from '../components/Botones';
 import { guardarUsuario } from '../services/fetch';
+import RutasPrivadas from '../routes/RutasPrivadas';
+
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -111,7 +113,7 @@ const PaginaPrincipal = () => {
   };
   return (
     <div>
-      <h1>Carrusel de Productos</h1>
+      <h1>Carrusel de Productos</h1> 
       <Carousel items={items}/>
 
       <form onSubmit={manejarEnvio} className="formulario-producto">

@@ -27,7 +27,7 @@ const App = () => {
       path: "/Home",
       element: (
         <RutasPrivadas isAuthenticated={isAuthenticated}>
-          <PaginaPrincipal />
+          <PaginaPrincipal/>
         </RutasPrivadas>
       ),
     },
@@ -61,3 +61,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>
 );
+
+export default App

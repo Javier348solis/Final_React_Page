@@ -21,9 +21,8 @@ function PaginaAdmi() {
           }
       };
       cargarProductos();
-  }, []);
+    }, []);
   
-
     const manejarArchivo = (e) => {
         setArchivo(e.target.files[0]);
     };
@@ -31,7 +30,9 @@ function PaginaAdmi() {
     const agregarProducto = async () => {
         const nuevoProducto = new FormData();
         nuevoProducto.append('nombre', nombreArticulo);
-        nuevoProducto.append('archivo', archivo);
+        if (archivo) {
+            nuevoProducto.append('archivo', archivo); // Usar el archivo directamente
+        }
         nuevoProducto.append('precio', precio);
         nuevoProducto.append('categoria', categoria);
 
@@ -90,8 +91,13 @@ function PaginaAdmi() {
 
     return ( 
         <div>
-            
-            <input type="file" onChange={manejarArchivo} placeholder='Seleccione el archivo'/>
+            <input 
+                className='file' 
+                id="upload-file" 
+                accept="image/x-png,image/gif,image/jpeg" 
+                type="file" 
+                onChange={manejarArchivo} // Cambia el manejador
+            />    
             <input 
                 type="text" 
                 value={nombreArticulo} 
