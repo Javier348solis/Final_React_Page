@@ -4,7 +4,7 @@ import { deleteProduct, actualizaDatos } from "../services/fetch";
 const ListaCards = ({ productos, handleAddToCart }) => {
   const [productList, setProductList] = useState(productos);
   const [editingProduct, setEditingProduct] = useState(null);
-  const [newData, setNewData] = useState({ descripcion: "", precio: "" });
+  const [newData, setNewData] = useState({ descripcion: "", precio: "" }); //Essta linea declara a newdata para actualizar un producto
 
   useEffect(() => {
     setProductList(productos);
@@ -13,12 +13,13 @@ const ListaCards = ({ productos, handleAddToCart }) => {
   const handleDelete = async (id) => {
     try {
       await deleteProduct(id);
-      setProductList(prevList => prevList.filter(product => product.id !== id));
+      //Aqui se utiliza el metodo filter para crear un nuevo array de productos.
+      setProductList(prevList => prevList.filter(product => product.id !== id)); 
     } catch (error) {
       console.error('Error al eliminar el producto:', error);
     }
   };
-
+//Esta parte se utiliza como un contrlador de eventos, mas que todo del boton de editar
   const handleEditClick = (product) => {
     setEditingProduct(product);
     setNewData({ descripcion: product.descripcion, precio: product.precio });

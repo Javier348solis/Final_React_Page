@@ -6,12 +6,14 @@ import Modal from './Modal';
 import Swal from 'sweetalert2'
 import '../styles/Inicio.css'
 
+//Utilizamos el useState para actualizar y brindar un estado nuevo o datos nuevos 
 function Form_Inicio({ setIsAuthenticated }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [datos, setDatos] = useState([]);
   const navegarWeb = useNavigate();
 
+  //se obtiene los datos con una funcion asincrona y se espera la respuesta con el await
   useEffect(() => {
     const getUsers = async () => {
       const dataUsuarios = await obtenerUsuario("users");
@@ -19,7 +21,7 @@ function Form_Inicio({ setIsAuthenticated }) {
     };
     getUsers();
   }, []);
-
+//Validacion de espacios vacios
   const validacionUsuario = () => {
     if (!email || !password) {
     
@@ -32,7 +34,7 @@ function Form_Inicio({ setIsAuthenticated }) {
       });
       return;
     }
-
+//se recorre con un punto find para buscar o iterar la API y asi ingresar al home
     const user = datos.find((usuario) => usuario.email === email && usuario.password === password);
     if (user) {
       setIsAuthenticated(true);  
@@ -74,7 +76,7 @@ function Form_Inicio({ setIsAuthenticated }) {
       />
       <button onClick={validacionUsuario} className='botoncito' type="button">Iniciar Sesión</button>
       <div className='login-link'>
-        {/* <p className='Direccion-login'>¿No tienes una cuenta? <Link to="/" className='color-link'>Regístrate aquí</Link></p> */}
+        
       </div>
     </div>
   );

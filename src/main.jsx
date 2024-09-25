@@ -12,6 +12,7 @@ import Relojes from './pages/Relojes.jsx';
 import RutasPrivadas from './routes/RutasPrivadas.jsx';
 import Quienes from './pages/Quienes.jsx';
 import Contacto from './components/contacto.jsx';
+import Map from './components/Map.jsx';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -54,13 +55,16 @@ const App = () => {
       element: <Relojes />,
     },
     {
-      path: "/Reseña",
+      path: "/resenia",
       element: <Quienes/>,
     },  {
       path: "/FormContacto",
       element: <Contacto/>,
     },
-    
+    {
+    path: "/ubicacion",
+    element: <Map/>,
+  },
   ]);
 
   return <RouterProvider router={router} />;

@@ -23,12 +23,12 @@ function Footer() {
           <ul>
             <li className="footer-lista">Informacion</li>
             <li>
-              <Link to="#" onClick={(e) => { e.preventDefault(); openModal(); }}>
+              <Link to="/resenia" onClick={(e) => { e.preventDefault(); openModal(); }}>
                 Acerca de Nosotros
               </Link>
             </li>
             <li>
-              <Link to="/Ubicacion">Ubicacion</Link>
+              <Link to="/ubicacion">Ubicacion</Link>
             </li>
             <li>
               <Link to="/FormContacto">Contacto</Link>

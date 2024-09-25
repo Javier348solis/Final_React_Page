@@ -16,14 +16,28 @@ const CartasHome = () => {
     },[])
 
     if (!product || !product.id) {
-      alert("El producto no es válido.");
+      
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Producto no valido",
+        showConfirmButton: false,
+        timer: 1500
+      });
       return;
     }
 
    
     try {
       await onAddToCart(product); 
-      alert("Producto añadido con éxito");
+    
+Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Producto añadido con éxito",
+  showConfirmButton: false,
+  timer: 1500
+});
     } catch (error) {
       alert("Error al añadir el producto: " + error.message);
     }

@@ -1,13 +1,11 @@
 import React from 'react';
 import '../styles/quienes.css'
 
-const Quienes = ({ isVisible, onClose }) => {
-  if (!isVisible) return null;
-
+const Quienes = () => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-button" onClick={onClose}>✖️</button>
+        <button className="close-button">✖️</button>
         <h1>Reseña</h1>
         <p>
          K&B es una venta de productos de tecnologia que nacio en Perez Zeledon, nuestro emprendimiento se creo en 2022, y hasta el dia de hoy <br /> nos hemos consolidado 
