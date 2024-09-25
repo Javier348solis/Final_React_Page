@@ -19,7 +19,6 @@ const ProductList = () => {
     try {
       await deleteProduct(id); // Elimina el producto de la API
       // Actualiza el estado para eliminar el producto de la lista
-      setProductos(productos.filter(product => product.id !== id));
     } catch (error) {
       console.error('Error al eliminar el producto:', error);
     }
@@ -33,7 +32,7 @@ const ProductList = () => {
   return (
     <div>
       <h1>Lista de Productos</h1>
-      <ListaCards productos={productos} handleAddToCart={handleAddToCart} handleDelete={handleDelete} />
+      <ListaCards productos={productos} handleAddToCart={handleAddToCart}/>
     </div>
   );
 };

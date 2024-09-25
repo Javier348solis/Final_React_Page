@@ -41,6 +41,9 @@ async function actualizaDatos(id, obj) {
           },
           body: JSON.stringify(obj)
       })
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} ${response.statusText}`);
+      }
       let datos = await response.json()
       console.log(datos);
   } catch (error) {

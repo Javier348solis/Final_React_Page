@@ -29,18 +29,7 @@
       "type": "cliente"
     }
   ],
-  "productos": [
-    {
-      "id": "58d6"
-    },
-    {
-      "id": "3755",
-      "img": {},
-      "nombre": "Telefono",
-      "precio": "23456",
-      "descripcion": "csdaf"
-    }
-  ],
+  "productos": [],
   "administrador": [
     {
       "id": "001",
