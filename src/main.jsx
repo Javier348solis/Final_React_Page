@@ -10,6 +10,8 @@ import Otros from './pages/Otros.jsx';
 import Promociones from './pages/Promociones.jsx';
 import Relojes from './pages/Relojes.jsx';
 import RutasPrivadas from './routes/RutasPrivadas.jsx';
+import Quienes from './pages/Quienes.jsx';
+import Contacto from './components/contacto.jsx';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -24,7 +26,7 @@ const App = () => {
       element: <Form_Inicio setIsAuthenticated={setIsAuthenticated} />, // 
     },
     {
-      path: "/Home",
+      path: "/home",
       element: (
         <RutasPrivadas isAuthenticated={isAuthenticated}>
           <PaginaPrincipal/>
@@ -51,6 +53,14 @@ const App = () => {
       path: "/Watches",
       element: <Relojes />,
     },
+    {
+      path: "/Reseña",
+      element: <Quienes/>,
+    },  {
+      path: "/FormContacto",
+      element: <Contacto/>,
+    },
+    
   ]);
 
   return <RouterProvider router={router} />;

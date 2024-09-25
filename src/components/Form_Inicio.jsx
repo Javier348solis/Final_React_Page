@@ -1,76 +1,82 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { obtenerUsuario } from '../services/fetch';
-import '../styles/Inicio.css';
+ import '../styles/Inicio.css';
 import Modal from './Modal';
+import Swal from 'sweetalert2'
+import '../styles/Inicio.css'
 
 function Form_Inicio({ setIsAuthenticated }) {
-  const [lista, setLista] = useState([]);
-  const [correo, setCorreo] = useState("");
-  const [password, setPassword] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
-
-  const handleLogin = async () => {
-    const users = await obtenerUsuario("users");
-    const user = users.find(user => user.email === correo && user.password === password);
-
-    if (!user) {
-      setErrorMessage("Usuario o contraseña incorrectos");
-      return;
-    }
-
-    if (user.type === "propietario") {
-      setModalVisible(true);
-      alert("Bienvenido, Administrador!");
-      localStorage.setItem("admin", true);
-    } else {
-      alert("Bienvenido, Cliente!");
-      localStorage.setItem("idUsuario", user.id);
-      setIsAuthenticated(true);
-    }
-    
-    navigate("/Home");
-  };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [datos, setDatos] = useState([]);
+  const navegarWeb = useNavigate();
 
   useEffect(() => {
-    async function obtenerDatos() {
-      const datos = await obtenerUsuario("users");
-      setLista(datos);
-    }
-    obtenerDatos();
+    const getUsers = async () => {
+      const dataUsuarios = await obtenerUsuario("users");
+      setDatos(dataUsuarios);
+    };
+    getUsers();
   }, []);
 
-  const validarInputs = async () => {
-    setErrorMessage(""); // Reiniciar mensaje de error
-    if (!correo || !password) {
-      setErrorMessage("Por favor, completa todos los campos.");
+  const validacionUsuario = () => {
+    if (!email || !password) {
+    
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Por favor, llene todos los espacios",
+        showConfirmButton: false,
+        timer: 3000
+      });
       return;
     }
-    await handleLogin();
+
+    const user = datos.find((usuario) => usuario.email === email && usuario.password === password);
+    if (user) {
+      setIsAuthenticated(true);  
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Bienvenido",
+        showConfirmButton: false,
+        timer: 3000
+      });
+      navegarWeb("/home");
+    } else {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Datos incorrectos",
+        showConfirmButton: false,
+        timer: 3000
+      });
+    }
   };
 
   return (
-    <>
-      <div className='Contenedor-principal'>
-        <h1 className='Titu'>Log-In</h1>
-        <input
-          onChange={(e) => setCorreo(e.target.value)}
-          type="text"
-          placeholder='Correo electrónico'
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder='Contraseña'
-        />
-        {errorMessage && <div className="error">{errorMessage}</div>}
-        <button className='botonci' onClick={validarInputs}>Ingresar</button>
+    <div className='contenedor-inicio'>
+      <h1 className='Titulo'>Iniciar Sesión</h1>
+      <input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className='espacio-correo'
+        type="email"
+        placeholder='Correo'
+      />
+      <input
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className='espacio-contra'
+        type="password"
+        placeholder='Contraseña'
+      />
+      <button onClick={validacionUsuario} className='botoncito' type="button">Iniciar Sesión</button>
+      <div className='login-link'>
+        {/* <p className='Direccion-login'>¿No tienes una cuenta? <Link to="/" className='color-link'>Regístrate aquí</Link></p> */}
       </div>
-      {modalVisible && <Modal productos={[] /* Asegúrate de pasar productos relevantes aquí */} />}
-    </>
+    </div>
   );
 }
-
-export default Form_Inicio;
+export default Form_Inicio

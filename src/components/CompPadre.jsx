@@ -1,4 +1,4 @@
-// Assume this is part of your parent component where the Modal is rendered
+
 import React, { useState } from 'react';
 import Modal from './Modal';
 

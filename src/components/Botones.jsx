@@ -2,27 +2,27 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import { actualizaDatos, deleteProduct } from '../services/fetch';
 
-Modal.setAppElement('#root'); // Asegúrate de que el ID coincida con tu raíz
+
 
 function Botones({ productId, onRefresh }) {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [productData, setProductData] = useState({}); // Cambia según tus necesidades
+    const [productData, setProductData] = useState({}); 
 
     const handleUpdate = async () => {
         await actualizaDatos(productId, productData);
-        onRefresh(); // Función para refrescar los datos
+        onRefresh(); 
         closeModal();
     };
 
     const handleDelete = async () => {
         await deleteProduct(productId);
-        onRefresh(); // Función para refrescar los datos
+        onRefresh(); 
         closeModal();
     };
 
     const closeModal = () => {
         setModalIsOpen(false);
-        setProductData({}); // Limpiar los datos del producto
+        setProductData({}); 
     };
 
     return (

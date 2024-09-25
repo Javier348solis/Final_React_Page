@@ -65,7 +65,7 @@ async function deleteProduct(id) {
 
     } catch (error) {
         console.error('Error al intentar eliminar el producto:', error);
-        throw error; // Puedes lanzar el error nuevamente si deseas manejarlo en otro lugar
+        throw error; // Puedes lanzar el error de nuevo si deseas manejarlo en otro lugar
     }
 }
 export { deleteProduct };

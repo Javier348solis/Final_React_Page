@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../styles/registro.css';
 import { obtenerUsuario, guardarUsuario } from '../services/fetch';
+import Swal from 'sweetalert2'
 
 function Form_Registro() {
   const [userName, setUserName] = useState('');
@@ -21,12 +22,24 @@ function Form_Registro() {
 
   const validacionUsuario = async () => {
     if (!userName || !email || !password) {
-      alert("Por favor, llene todos los espacios");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Por favor, llene todos los espacios",
+        showConfirmButton: false,
+        timer: 3000
+      });
       return;
     } else {
       const user = datos.find((usuario) => usuario.email === email);
       if (user) {
-        alert("El usuario ya existe");
+Swal.fire({
+  position: "top-end",
+  icon: "alert",
+  title: "El usuario ya esta registrado",
+  showConfirmButton: false,
+  timer: 3000
+});
       } else {
         let usuario = {
           name: userName,
@@ -35,6 +48,13 @@ function Form_Registro() {
           type: userType 
         };
         await guardarUsuario(usuario, "users");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Usuario registrado con exito",
+          showConfirmButton: false,
+          timer: 3000
+        });
         navegarWeb("/Inicio");
       }
     }

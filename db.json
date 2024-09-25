@@ -1,100 +1,32 @@
 {
   "users": [
     {
-      "id": "589a",
-      "name": "Javier",
-      "email": "javiersolis@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "86fd",
-      "name": "Javier Solis Retana",
-      "email": "javiersolisretana@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "f31f",
+      "id": "a9b0",
       "name": "Javier Solis",
-      "email": "javier12@.com",
-      "password": "1234",
-      "type": "propietario"
-    },
-    {
-      "id": "f4b7",
-      "name": "Javier Solis Retana",
-      "email": "javier23@.com",
+      "email": "jasore2024@gmail.com",
       "password": "1234",
       "type": "cliente"
     },
     {
-      "id": "4d74",
-      "name": "Yocelyn Rivera",
-      "email": "rivera@gmailcom",
-      "password": "1234",
-      "type": "propietario"
-    },
-    {
-      "id": "1645",
-      "name": "Miguel",
-      "email": "ayyymiguel@gmail.com",
-      "password": "1234",
-      "type": "cliente"
-    },
-    {
-      "id": "f979",
-      "name": "Santiago",
-      "email": "nffhefvh@GMAIL.COM",
-      "password": "1234",
-      "type": "cliente"
-    },
-    {
-      "id": "267f",
-      "name": "Yocelyn Rivera",
-      "email": "yossrigu@gmail.com",
-      "password": "1234",
-      "type": "cliente"
-    },
-    {
-      "id": "7188",
-      "name": "Yocelyn",
-      "email": "mariana@gmail.com",
-      "password": "1234",
-      "type": "cliente"
-    },
-    {
-      "id": "ef10",
-      "name": "Javier",
-      "email": "solis@gmail.com",
-      "password": "1234",
-      "type": "propietario"
-    },
-    {
-      "id": "6682",
-      "name": "Santiago",
-      "email": "ariza@gmail.com",
+      "id": "081c",
+      "name": "Oscar Olivares",
+      "email": "ogg@gmail.com",
       "password": "12345",
       "type": "propietario"
     },
     {
-      "id": "96c1",
-      "name": "Yoss",
-      "email": "marianita@gmail.com",
+      "id": "3d7d",
+      "name": "Miguel",
+      "email": "Miguel@gmail.com",
       "password": "1234",
-      "type": "propietario"
+      "type": "cliente"
     },
     {
-      "id": "8d01",
-      "name": "Ma",
-      "email": "masore@.com",
+      "id": "b2d8",
+      "name": "Yocelyn",
+      "email": "yoss@gmail.com",
       "password": "1234",
-      "type": "propietario"
-    },
-    {
-      "id": "163e",
-      "name": "nana",
-      "email": "nana@.com",
-      "password": "1234",
-      "type": "propietario"
+      "type": "cliente"
     }
   ],
   "productos": [
@@ -102,67 +34,11 @@
       "id": "58d6"
     },
     {
-      "id": "1b93",
+      "id": "3755",
       "img": {},
-      "nombre": "aaa",
-      "precio": "123",
-      "descripcion": "aaa"
-    },
-    {
-      "id": "1362",
-      "img": {},
-      "nombre": "efre",
-      "precio": "20.000",
-      "descripcion": "frfr3g3"
-    },
-    {
-      "id": "d7b3",
-      "img": {},
-      "nombre": "efre",
-      "precio": "20.000",
-      "descripcion": "frfr3g3"
-    },
-    {
-      "id": "42b0",
-      "img": {},
-      "nombre": "ruyru",
-      "precio": "22222",
-      "descripcion": "wrgrtu46"
-    },
-    {
-      "id": "6ca9",
-      "img": {},
-      "nombre": "aaa",
-      "precio": "1221",
-      "descripcion": "adsadas"
-    },
-    {
-      "id": "0a20",
-      "img": {},
-      "nombre": "aaaa",
-      "precio": "12222222",
-      "descripcion": "aaaaaaa"
-    },
-    {
-      "id": "ea76",
-      "img": {},
-      "nombre": "aaaaaaaa",
-      "precio": "1232",
-      "descripcion": "aaaaaaa"
-    },
-    {
-      "id": "32ca",
-      "img": {},
-      "nombre": "dasd",
-      "precio": "123",
-      "descripcion": "dasda"
-    },
-    {
-      "id": "2437",
-      "img": {},
-      "nombre": "wefer",
-      "precio": "42454",
-      "descripcion": "fererg"
+      "nombre": "Telefono",
+      "precio": "23456",
+      "descripcion": "csdaf"
     }
   ],
   "administrador": [

@@ -1,20 +1,20 @@
 body{
     background-image: url("../Img/orion-nebula-11107_1920.jpg");
 }
-.Titu {
+.Titulo {
     display: flex;
     justify-content: center;
     color: rgb(220, 11, 11);
 }
 
-.Contenedor-principal {
+.contenedor-inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 50vh;
     padding: 20px;
-    background-color: rgb(59, 56, 56);
+    background-color: rgb(7, 1, 45);
     border-radius: 10px;
     border: 8px solid white;
     max-width: 400px; 
@@ -36,7 +36,7 @@ input::placeholder {
     color: white;
 }
 
-.botonci {
+.botoncito {
     padding: 10px 20px;
     background-color: white;
     color: black;
@@ -47,12 +47,12 @@ input::placeholder {
     box-shadow: 0 4px 15px rgba(0, 0, 255, 0.5);
 }
 
-.botonci:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 255, 0.7);
+.botoncito:hover {
+    box-shadow: 0 6px 20px rgba(107, 1, 1, 0.5);
 }
 
-.botonci:active {
-    box-shadow: 0 2px 10px rgba(0, 0, 255, 0.5);
+.botoncito:active {
+    box-shadow: 0 2px 10px rgba(107, 1, 1, 0.5);
 }
 
 body {

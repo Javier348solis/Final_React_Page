@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import '../styles/contacto.css'
+import Navbar from './Navbar';
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -24,10 +26,13 @@ const Contacto = () => {
         console.error('Failed to send email. Error:', err);
       });
   };
-
+  <Navbar/>
   return (
-    <form onSubmit={sendEmail}>
+  
+    <form className='contenedor' onSubmit={sendEmail}>
+      <h1 className='titulo'>Formulario Contacto</h1>
       <input 
+      className='input-name'
         type="text" 
         name="name" 
         placeholder="Nombre Completo" 
@@ -36,6 +41,7 @@ const Contacto = () => {
         required 
       />
       <input 
+      className='input-correo'
         type="email" 
         name="email" 
         placeholder="Correo electronico" 
@@ -44,13 +50,14 @@ const Contacto = () => {
         required 
       />
       <textarea 
+      className='espacio-message'
         name="message" 
         placeholder="Mensaje" 
         value={formData.message} 
         onChange={handleChange} 
         required 
       />
-      <button type="submit">Enviar</button>
+      <button className='boton-form' type="submit">Enviar</button>
     </form>
   );
 };
