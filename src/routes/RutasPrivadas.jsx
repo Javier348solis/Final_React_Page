@@ -5,4 +5,4 @@ const RutasPrivadas = ({ children, isAuthenticated }) => {
   return isAuthenticated ? children : <Navigate to="/home" />;
 };
 
-export default RutasPrivadas;
+export default RutasPrivadas;   

@@ -27,6 +27,27 @@
       "email": "yoss@gmail.com",
       "password": "1234",
       "type": "cliente"
+    },
+    {
+      "id": "178e",
+      "name": "Javier Solis Retana",
+      "email": "javier12@.gmail.com",
+      "password": "12345",
+      "type": "cliente"
+    },
+    {
+      "id": "9f5a",
+      "name": "Oscar Olivares",
+      "email": "oscargg@gmail.com",
+      "password": "12345",
+      "type": "propietario"
+    },
+    {
+      "id": "83d8",
+      "name": "Javier Solis",
+      "email": "solisretana@gmail.com",
+      "password": "1234",
+      "type": "propietario"
     }
   ],
   "productos": [],
